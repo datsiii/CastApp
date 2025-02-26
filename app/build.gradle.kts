@@ -17,8 +17,16 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
+        debug {
+            buildConfigField("String", "CHROMECAST_APP_ID", "\"CC1AD845\"")
+        }
         release {
+            buildConfigField("String", "CHROMECAST_APP_ID", "\"CC1AD845\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -45,4 +53,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //google cast && mediaRouter
+    implementation (libs.play.services.cast.framework)
+    implementation (libs.androidx.mediarouter)
 }
