@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CastApp</string>
+    <string name="init_text">Click this button to send the video</string>
 </resources>
